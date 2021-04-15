@@ -1,3 +1,3 @@
-$("#randomise").click(() -> {
+$("#randomise").click(() => {
     randomiseQuote();
 });
