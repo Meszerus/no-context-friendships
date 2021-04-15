@@ -3,6 +3,7 @@ let quotes = { };
 
 $(document).ready(function() {
     loadQuotes();
+    randomiseQuote();
 });
 
 const loadQuotes = () => {
