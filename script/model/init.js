@@ -7,6 +7,5 @@ $(document).ready(function() {
 
 const loadQuotes = () => {
     personNames.forEach(personName ->
-        $.get(`./resource/${personName}.txt`, data -> dictionary.push(data.split("\n")));
-);
+        $.get(`./resource/${personName}.txt`, data -> dictionary.push(data.split("\n"))));
 };
