@@ -1,6 +1,6 @@
 const randomiseQuote = () => {
     const personNames = Object.keys(quotes);
-    const personRandomIndex = keys.length * Math.random() << 0;
+    const personRandomIndex = personNames.length * Math.random() << 0;
     const personRandomName = Object.keys(quotes)[personRandomIndex];
 
     const randomQuoteArray = quotes[personNames[personRandomIndex]];
