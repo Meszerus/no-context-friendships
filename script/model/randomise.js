@@ -1,5 +1,11 @@
 const randomiseQuote = () => {
-    var randomPerson = Math.floor(Math.random() * quotes.length);
-    var randomQuote = Math.floor(Math.random() * quotes[randomPerson].length);
-    $("#quote").text(quotes[randomPerson][randomQuote]);
+    const personNames = Object.keys(quotes);
+    const personRandomIndex = keys.length * Math.random() << 0;
+    const personRandomName = Object.keys(quotes)[personRandomIndex];
+
+    const randomQuoteArray = quotes[personNames[personRandomIndex]];
+    const randomQuoteIndex = Math.floor(Math.random() * randomQuoteArray.length);
+
+    $("#quote").text(randomQuoteArray[randomQuoteIndex]);
+    $("#person").text(personRandomName);
 };

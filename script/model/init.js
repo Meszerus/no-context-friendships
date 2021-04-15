@@ -1,5 +1,5 @@
 const personNames = [ "matt-t", "will-g", "charlie-t" ];
-let quotes = [];
+let quotes = { };
 
 $(document).ready(function() {
     loadQuotes();
@@ -7,5 +7,5 @@ $(document).ready(function() {
 
 const loadQuotes = () => {
     personNames.forEach(personName =>
-        $.get(`./resource/${personName}.txt`, data => quotes.push(data.split("\n"))));
+        $.get(`./resource/${personName}.txt`, data => quotes[personName].push(data.split("\n"))));
 };
