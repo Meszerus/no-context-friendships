@@ -1,4 +1,5 @@
 const randomiseQuote = () => {
-    var randomNumber = Math.floor(Math.random() * quotes.length);
-    $("#quote").text(quotes[randomNumber]);
+    var randomPerson = Math.floor(Math.random() * quotes.length);
+    var randomQuote = Math.floor(Math.random() * quotes[randomPerson].length);
+    $("#quote").text(quotes[randomQuote]);
 };
