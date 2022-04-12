@@ -1,3 +1,5 @@
+const seenQuotes = [];
+
 const randomiseQuote = () => {
     const personNames = Object.keys(quotes);
     const personRandomIndex = personNames.length * Math.random() << 0;
@@ -5,7 +7,13 @@ const randomiseQuote = () => {
 
     const randomQuoteArray = quotes[personNames[personRandomIndex]];
     const randomQuoteIndex = Math.floor(Math.random() * randomQuoteArray.length);
+    const chosenQuote = randomQuoteArray[randomQuoteIndex];
 
-    $("#quote").text(randomQuoteArray[randomQuoteIndex]);
-    $("#person").text(personRandomName);
+    if(!seenQuotes.includes(chosenQuote)) {
+        $("#quote").text(chosenQuote);
+        $("#person").text(personRandomName);
+        seenQuotes.push(chosenQuote);
+    } else {
+        randomiseQuote();
+    }
 };
