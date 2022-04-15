@@ -1,19 +1,31 @@
 const seenQuotes = [];
+const ATTEMPT_MAX = 30;
+let currentAttempts = 0;
 
-const randomiseQuote = () => {
+const hasBeenSeenBefore = (chosenQuote) => seenQuotes.includes(chosenQuote);
+
+const getRandomEntry = (obj) => obj[Math.floor(Math.random() * obj.length)];
+
+const getRandomPerson = () => {
     const personNames = Object.keys(quotes);
     const personRandomIndex = personNames.length * Math.random() << 0;
-    const personRandomName = Object.keys(quotes)[personRandomIndex].split("-")[0];
+    return Object.keys(quotes)[personRandomIndex];
+};
 
-    const randomQuoteArray = quotes[personNames[personRandomIndex]];
-    const randomQuoteIndex = Math.floor(Math.random() * randomQuoteArray.length);
-    const chosenQuote = randomQuoteArray[randomQuoteIndex];
+const randomiseQuote = () => {
+    const randomPerson = selectedPerson.length > 0 ? selectedPerson : getRandomPerson();
+    const condition = selectedCondition.length > 0
+            ? selectedCondition
+            : getRandomEntry(Object.keys(quotes[randomPerson]));
+    const selectedConditionQuotes = quotes[randomPerson][condition];
+    const chosenQuote = getRandomEntry(selectedConditionQuotes);
 
-    if(!seenQuotes.includes(chosenQuote)) {
+    if(!hasBeenSeenBefore(chosenQuote)) {
         $("#quote").text(chosenQuote);
-        $("#person").text(personRandomName);
+        $("#person").text(randomPerson);
         seenQuotes.push(chosenQuote);
-    } else {
+    } else if(currentAttempts < ATTEMPT_MAX) {
+        currentAttempts++;
         randomiseQuote();
     }
 };

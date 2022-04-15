@@ -5,13 +5,29 @@
         <meta charset="UTF-8">
         <meta name="author" content="Meszerus">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
         <div id="existingQuotes">
-        <h1 id="quote"></h1>
-        <h2 id="person"></h2>
-        <button id="randomise">Randomise</button>
+            <h1 id="quote"></h1>
+            <h2 id="person"></h2>
+            <div id="condition">
+                <label for="people">Person:</label>
+                <select id="people">
+                    <option selected value="">All</option>
+                    <option value="Matt">Matt</option>
+                    <option value="Charlie">Charlie</option>
+                    <option value="Dylan">Dylan</option>
+                    <option value="Will">Will</option>
+                </select>
+                <label for="conditions">Category:</label>
+                <select id="conditions">
+                    <option selected value="">All</option>
+                    <option value="wisdoms">Wisdoms</option>
+                    <option value="band_names">Band names</option>
+                </select>
+            </div>
+            <button id="randomise">Randomise</button>
         </div>
         <div id="newQuotes">
             <button id="new">Add</button>
@@ -20,7 +36,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-    <script src="script/controller/handlers.js"></script>
-    <script src="script/model/init.js"></script>
-    <script src="script/model/randomise.js"></script>
+    <script src="/script/controller/handlers.js"></script>
+    <script src="/script/model/init.js"></script>
+    <script src="/script/model/randomise.js"></script>
+    <script src="/resource/matt-t.js"></script>
+    <script src="/resource/charlie-t.js"></script>
+    <script src="/resource/dylan-s.js"></script>
+    <script src="/resource/will-g.js"></script>
 </html>
