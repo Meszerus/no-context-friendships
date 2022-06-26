@@ -1,3 +1,5 @@
+$("#people").append(`<option value="Charlie">Charlie</option>`);
+
 quotes.Charlie = {
     wisdoms: [
         "The average adult farts enough in a day to fill a small child",

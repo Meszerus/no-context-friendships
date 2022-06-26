@@ -1,11 +1,27 @@
 $("#randomise").click(() => {
     randomiseQuote();
+
+    if(mode === "quiz") {
+        $(".action_button").toggle({ duration: 1 });
+    }
 });
 
-$("#new").click(() => {
-    const emailUser = "deicideisfun";
-    const emailDomain = "gmail.com"
-    window.open(`mailto:${emailUser}@${emailDomain}?subject=new-quote`);
+$("#reveal").click(() => {
+    revealPerson();
+    $(".action_button").toggle({ duration: 1 });
+});
+
+$("#mode").change(() => {
+    mode = mode === "browse" ? "quiz" : "browse";
+    randomiseQuote();
+
+    if(mode === "quiz") {
+        $("#reveal").show();
+        $("#randomise").hide();
+    } else {
+        $("#randomise").show();
+        $("#reveal").hide();
+    }
 });
 
 $("input[name='condition']").on("click", function() {

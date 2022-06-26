@@ -5,33 +5,50 @@
         <meta charset="UTF-8">
         <meta name="author" content="Meszerus">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div id="existingQuotes">
-            <h1 id="quote"></h1>
-            <h2 id="person"></h2>
-            <div id="condition">
-                <label for="people">Person:</label>
-                <select id="people">
-                    <option selected value="">All</option>
-                    <option value="Matt">Matt</option>
-                    <option value="Charlie">Charlie</option>
-                    <option value="Dylan">Dylan</option>
-                    <option value="Will">Will</option>
-                </select>
-                <label for="conditions">Category:</label>
-                <select id="conditions">
-                    <option selected value="">All</option>
-                    <option value="wisdoms">Wisdoms</option>
-                    <option value="band_names">Band names</option>
-                </select>
-            </div>
-            <button id="randomise">Randomise</button>
-        </div>
-        <div id="newQuotes">
-            <button id="new">Add</button>
-        </div>
+        <section class="container">
+            <section class="generatedQuote">
+                <div>
+                    <h1 id="quote" class="quote"></h1>
+                    <h2 id="person" class="person"></h2>
+                </div>
+            </section>
+            <section class="condition">
+                <div>
+                    <label for="people">Person:</label>
+                    <select id="people" class="condition_select">
+                        <option selected value="">All</option>
+                        <option value="Matt">Matt</option>
+                        <option value="Charlie">Charlie</option>
+                        <option value="Dylan">Dylan</option>
+                        <option value="Will">Will</option>
+                    </select>
+                </div>
+            </section>
+            <section class="action_randomise">
+                <button id="randomise" class="action_button">Randomise</button>
+                <button id="reveal" class="action_button" style="display: none;">✨ Reveal ✨</button>
+            </section>
+            <section class="condition">
+                <div>
+                    <label for="mode">Quiz Mode:</label>
+                    <label class="switch">
+                        <input id="mode" type="checkbox" />
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>
+                    <label for="conditions">Category:</label>
+                    <select id="conditions" class="condition_select">
+                        <option selected value="">All</option>
+                        <option value="wisdoms">Wisdoms</option>
+                        <option value="band_names">Band names</option>
+                    </select>
+                </div>
+            </section>
+        </section>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -43,4 +60,6 @@
     <script src="resource/charlie-t.js"></script>
     <script src="resource/dylan-s.js"></script>
     <script src="resource/will-g.js"></script>
+    <script src="resource/natasha-m.js"></script>
+    <script src="resource/stevie-m.js"></script>
 </html>

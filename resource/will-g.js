@@ -1,3 +1,5 @@
+$("#people").append(`<option value="Will">Will</option>`);
+
 quotes.Will = {
     wisdoms: [
         "Boomerangs come back on their own terms",
@@ -11,6 +13,8 @@ quotes.Will = {
         "The greasy poon"
     ],
     other: [
+        "It's shaped like imperial war",
+        "It's weird having my belly in the glow",
         "It's the whq'k sounds that are the trouble",
         "I just Big Toe'd the cone",
         "Does this make you cry Urban Tears?",

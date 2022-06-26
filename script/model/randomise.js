@@ -22,10 +22,19 @@ const randomiseQuote = () => {
 
     if(!hasBeenSeenBefore(chosenQuote)) {
         $("#quote").text(chosenQuote);
-        $("#person").text(randomPerson);
+        $("#person").text(mode === "browse" ? randomPerson : "????");
         seenQuotes.push(chosenQuote);
     } else if(currentAttempts < ATTEMPT_MAX) {
         currentAttempts++;
         randomiseQuote();
     }
+
+    currentQuote.quote = chosenQuote;
+    currentQuote.person = randomPerson;
+    currentQuote.revealed = mode === "browse";
+};
+
+const revealPerson = () => {
+    $("#person").text(currentQuote.person);
+    currentQuote.revealed = true;
 };

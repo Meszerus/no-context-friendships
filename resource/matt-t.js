@@ -1,4 +1,9 @@
-quotes.Matt = {
+$("#people")
+    .append(`<option value="Matt" data-source="MattNormal">Matt (outside work)</option>`)
+    .append(`<option value="Matt" data-source="MattWork">Matt (in work)</option>`);
+
+quotes.MattNormal = {
+    name: "Matt",
     wisdoms: [
         "Never go full Santa",
         "When you shower, you reset",
@@ -12,6 +17,8 @@ quotes.Matt = {
         "Apple oxygen"
     ],
     other: [
+        "You have forever flavour",
+        "Sometimes you just email yourself",
         "Eat my bum pipe",
         "We're at a Mexican fuck-off",
         "Who's Jill Docking?",
@@ -112,5 +119,15 @@ quotes.Matt = {
         "Sweet swilly sensations",
         "Pulled peef",
         "Jerk cherck"
+    ]
+};
+
+quotes.MattWork = {
+    name: "Matt (work)",
+    wisdoms: [
+    ],
+    band_names: [
+    ],
+    other: [
     ]
 };
